@@ -4,7 +4,7 @@ const webpack = require("webpack");
 
 module.exports = {
   mode: "development",
-  entry: ["webpack-hot-middleware/client", "./src/index.ts"],
+  entry: ["webpack-hot-middleware/client", "./src/index.tsx"],
   devtool: "inline-source-map",
   devServer: {
     static: "./dist",
@@ -12,7 +12,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Development",
+      template: "./src/index.html",
     }),
     new webpack.HotModuleReplacementPlugin(),
   ],
@@ -36,6 +36,10 @@ module.exports = {
         test: /\.tsx?$/,
         use: "ts-loader",
         exclude: /node_modules/,
+      },
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
       },
     ],
   },
