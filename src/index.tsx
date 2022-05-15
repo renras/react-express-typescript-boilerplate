@@ -4,7 +4,7 @@ import { hot } from "react-hot-loader/root";
 import ReactDom from "react-dom";
 
 function App() {
-  return <div>Hello Worlds</div>;
+  return <div>Hello World</div>;
 }
 
 export default hot(App);
