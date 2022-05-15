@@ -4,10 +4,7 @@ const webpack = require("webpack");
 
 module.exports = {
   mode: "development",
-  entry: [
-    "webpack-hot-middleware/client?reload=true",
-    "./src/index.ts", // Your entry point
-  ],
+  entry: ["webpack-hot-middleware/client", "./src/index.ts"],
   devtool: "inline-source-map",
   devServer: {
     static: "./dist",
@@ -20,7 +17,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
   ],
   output: {
-    filename: "index.js",
+    filename: "[name].js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
     publicPath: "/",
