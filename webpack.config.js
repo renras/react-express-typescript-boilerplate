@@ -4,9 +4,10 @@ const webpack = require("webpack");
 
 module.exports = {
   mode: "development",
-  entry: {
-    index: "./src/index.js",
-  },
+  entry: [
+    "webpack-hot-middleware/client?reload=true",
+    "./src/index.js", // Your entry point
+  ],
   devtool: "inline-source-map",
   devServer: {
     static: "./dist",
