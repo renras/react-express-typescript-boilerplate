@@ -1,11 +1,12 @@
 import "./index.html";
 import "./style.css";
-
-import { createRoot } from "react-dom/client";
+import { hot } from "react-hot-loader/root";
+import ReactDom from "react-dom";
 
 function App() {
-  return <div>Hello World</div>;
+  return <div>Hello Worlds</div>;
 }
 
-const root = createRoot(document.getElementById("root"));
-root.render(<App />);
+export default hot(App);
+
+ReactDom.render(<App />, document.getElementById("root"));
