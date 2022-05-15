@@ -2,11 +2,11 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
 
-module.exports = {
+const config = {
   mode: "development",
   entry: [
     "webpack-hot-middleware/client?reload=true",
-    "./src/index.js", // Your entry point
+    "./src/index.ts", // Your entry point
   ],
   devtool: "inline-source-map",
   devServer: {
@@ -37,4 +37,9 @@ module.exports = {
       },
     ],
   },
+  resolve: {
+    extensions: [".tsx", ".ts", ".js"],
+  },
 };
+
+export default config;
