@@ -2,7 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
 
-const config = {
+module.exports = {
   mode: "development",
   entry: [
     "webpack-hot-middleware/client?reload=true",
@@ -41,5 +41,3 @@ const config = {
     extensions: [".tsx", ".ts", ".js"],
   },
 };
-
-export default config;
