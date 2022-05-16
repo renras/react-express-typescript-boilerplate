@@ -15,7 +15,13 @@ app.use(
   })
 );
 
-app.use(webpackHotMiddleware(compiler));
+app.use(
+  webpackHotMiddleware(compiler, {
+    log: false,
+    path: `/__webpack_hmr`,
+    heartbeat: 10 * 1000,
+  })
+);
 
 // Serve the files on port 3000.
 app.listen(3000, () => console.log("Example app listening on port 3000!\n"));

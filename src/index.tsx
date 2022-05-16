@@ -1,12 +1,18 @@
 import "./index.html";
 import "./style.css";
-import { hot } from "react-hot-loader/root";
 import ReactDom from "react-dom";
+import TestComponent from "./TestComponent";
 
 function App() {
-	return <div>Hello Worlds</div>;
+  return (
+    <div>
+      <TestComponent />
+    </div>
+  );
 }
 
-export default hot(App);
+if (module.hot) {
+  module.hot.accept();
+}
 
 ReactDom.render(<App />, document.getElementById("root"));
