@@ -1,7 +1,7 @@
-import path from "path";
-import HtmlWebpackPlugin from "html-webpack-plugin";
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-export default {
+module.exports = {
   mode: "development",
   entry: {
     index: "./src/index.tsx",
@@ -35,10 +35,7 @@ export default {
         use: {
           loader: "babel-loader",
           options: {
-            presets: [
-              "@babel/preset-env",
-              ["@babel/preset-react", { runtime: "automatic" }],
-            ],
+            presets: ["@babel/preset-env", "@babel/preset-react"],
           },
         },
         exclude: /node_modules/,
