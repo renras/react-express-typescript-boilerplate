@@ -1,6 +1,6 @@
 import "./index.html";
 import "./style.css";
-import ReactDom from "react-dom";
+import { createRoot } from "react-dom/client";
 import TestComponent from "./TestComponent";
 
 function App() {
@@ -11,4 +11,5 @@ function App() {
   );
 }
 
-ReactDom.render(<App />, document.getElementById("root"));
+const root = createRoot(document.getElementById("root"));
+root.render(<App />);
