@@ -1,20 +1,17 @@
 import "./style.css";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { createRoot } from "react-dom/client";
-import TestComponent from "./TestComponent";
 
 function App() {
+  const [response, setResponse] = useState("");
+
   useEffect(() => {
     fetch("/api/potanginamo").then((response) =>
-      response.json().then((data) => console.log(data))
+      response.json().then((data) => setResponse(data.message))
     );
-  });
+  }, []);
 
-  return (
-    <div>
-      <TestComponent />
-    </div>
-  );
+  return <div>{response}</div>;
 }
 
 const root = createRoot(document.getElementById("root"));
