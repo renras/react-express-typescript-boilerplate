@@ -1,26 +1,24 @@
 import path from "path";
-import webpack from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 
 export default {
   mode: "development",
-  entry: ["webpack-hot-middleware/client", "./src/index.tsx"],
+  entry: {
+    index: "./src/index.tsx",
+  },
   devtool: "inline-source-map",
   devServer: {
     static: "./dist",
-    hot: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.html",
     }),
-    new webpack.HotModuleReplacementPlugin(),
   ],
   output: {
     filename: "[name].js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
-    publicPath: "/",
   },
   module: {
     rules: [
@@ -53,5 +51,8 @@ export default {
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
+  },
+  optimization: {
+    runtimeChunk: "single",
   },
 };
