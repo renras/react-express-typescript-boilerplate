@@ -52,7 +52,4 @@ export default {
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
   },
-  optimization: {
-    runtimeChunk: "single",
-  },
 };
